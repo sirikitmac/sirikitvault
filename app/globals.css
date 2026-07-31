@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 250 250 246; /* warm white */
+  --fg: 42 34 27; /* warm charcoal-brown */
+  --muted: 138 124 111;
+  --accent-a: #ffd60a;
+  --accent-b: #ffd60a;
+  --accent-glow: 255 214 10;
+}
+
+.dark {
+  --bg: 14 15 12; /* warm near-black */
+  --fg: 245 238 229;
+  --muted: 168 155 141;
+  --accent-a: #ffd60a;
+  --accent-b: #ffd60a;
+  --accent-glow: 255 214 10;
+}
+
+* {
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: #ffd60a;
+  color: #000;
+}
+
+/* Fine noise for texture */
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .noise::before {
+  opacity: 0.05;
+}
+
+/* ── Utility ────────────────────────────────────────────── */
+.text-gradient {
+  color: #ffd60a;
+}
+
+.cell-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffd60a;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-a);
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Category marquee ──────────────────────────────────────── */
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee-left 14s linear infinite;
+  will-change: transform;
+}
+
+.marquee-chunk {
+  display: inline-block;
+  padding-right: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
