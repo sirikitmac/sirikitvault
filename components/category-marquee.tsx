@@ -94,19 +94,19 @@ function MarqueeRow({
               {names.length > 0 ? (
                 <div className="w-full overflow-hidden">
                   <div className="marquee-track">
-                    <span className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                    <span className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
                       {sequence}
                     </span>
                     <span
                       aria-hidden="true"
-                      className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+                      className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
                     >
                       {sequence}
                     </span>
                   </div>
                 </div>
               ) : (
-                <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
                   {label}
                 </span>
               )}
@@ -118,7 +118,7 @@ function MarqueeRow({
               animate={{ rotateX: 0, opacity: 1 }}
               exit={{ rotateX: -90, opacity: 0 }}
               transition={{ duration: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+              className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
             >
               {label}
             </motion.span>

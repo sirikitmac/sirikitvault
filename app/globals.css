@@ -10,6 +10,12 @@
   --accent-b: #ffd60a;
   --accent-glow: 255 214 10;
 
+  /* Warm accent family — amber → copper → ember rose. One family, three stops. */
+  --accent-amber: #ffd60a;
+  --accent-copper: #ff9b42;
+  --accent-rose: #ff6fb0;
+  --accent-gradient: linear-gradient(100deg, var(--accent-amber) 0%, var(--accent-copper) 55%, var(--accent-rose) 100%);
+
   /* Motion tokens — strong custom curves, not the built-in CSS easings */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -22,6 +28,11 @@
   --accent-a: #ffd60a;
   --accent-b: #ffd60a;
   --accent-glow: 255 214 10;
+
+  --accent-amber: #ffd60a;
+  --accent-copper: #ff9b42;
+  --accent-rose: #ff6fb0;
+  --accent-gradient: linear-gradient(100deg, var(--accent-amber) 0%, var(--accent-copper) 55%, var(--accent-rose) 100%);
 }
 
 * {
@@ -62,7 +73,11 @@ body {
 
 /* ── Utility ────────────────────────────────────────────── */
 .text-gradient {
-  color: #ffd60a;
+  background-image: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .cell-label {
@@ -71,6 +86,177 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #ffd60a;
+}
+
+/* ── Glass surface primitives ──────────────────────────────
+   Soft translucent surface language: primitive-level tokens that
+   Phase 2 components (cards, modal, navbar, inputs) adopt directly,
+   built entirely from the existing glass-light/glass-dark/accent-glow
+   shadow tokens and the 2.5xl/3.5xl radii already in tailwind.config.ts. */
+.glass-panel {
+  @apply rounded-2xl border border-black/[0.07] bg-white/70 shadow-glass-light backdrop-blur-xl backdrop-saturate-150;
+  transition:
+    box-shadow 300ms var(--ease-out),
+    background-color 300ms var(--ease-out),
+    border-color 300ms var(--ease-out);
+}
+.dark .glass-panel {
+  @apply border-white/[0.08] bg-[#171310]/55 shadow-glass-dark;
+}
+.glass-panel-interactive:hover {
+  @apply shadow-glass-light-hover;
+}
+.dark .glass-panel-interactive:hover {
+  @apply shadow-glass-dark-hover;
+}
+.glow-accent {
+  @apply shadow-accent-glow;
+  transition: box-shadow 300ms var(--ease-out);
+}
+.glow-accent:hover {
+  @apply shadow-accent-glow-hover;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-panel {
+    background-color: rgb(var(--bg) / 0.94);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgb(var(--bg) / 0.96);
+  }
+}
+
+/* ── Aurora field ───────────────────────────────────────────
+   Four radial blobs on a fixed layer, animated with transform-only
+   @keyframes (compositor thread, no layout/paint per frame). The
+   mask fades opacity hard after the hero so it stays a faint, calm
+   backdrop under the card grid instead of competing with it. */
+.aurora-field {
+  overflow: hidden;
+  contain: layout style paint;
+  mask-image: linear-gradient(
+    to bottom,
+    black 0,
+    black 68vh,
+    rgba(0, 0, 0, 0.16) 105vh,
+    rgba(0, 0, 0, 0.16) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0,
+    black 68vh,
+    rgba(0, 0, 0, 0.16) 105vh,
+    rgba(0, 0, 0, 0.16) 100%
+  );
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(min(20vw, 170px));
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.aurora-blob-a {
+  left: -12%;
+  top: -18%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 780px;
+  max-height: 780px;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 214, 10, 0.55), transparent 70%);
+  animation: aurora-drift-a 58s var(--ease-in-out) infinite alternate;
+}
+
+.aurora-blob-b {
+  right: -16%;
+  top: 2%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(circle at 60% 40%, rgba(255, 155, 66, 0.5), transparent 70%);
+  animation: aurora-drift-b 64s var(--ease-in-out) infinite alternate;
+}
+
+.aurora-blob-c {
+  left: 12%;
+  bottom: -22%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 640px;
+  max-height: 640px;
+  background: radial-gradient(circle at 45% 55%, rgba(255, 111, 176, 0.42), transparent 70%);
+  animation: aurora-drift-c 70s var(--ease-in-out) infinite alternate;
+}
+
+.aurora-blob-d {
+  right: 2%;
+  bottom: -14%;
+  width: 42vw;
+  height: 42vw;
+  max-width: 560px;
+  max-height: 560px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 214, 10, 0.3), transparent 70%);
+  animation: aurora-drift-d 46s var(--ease-in-out) infinite alternate;
+}
+
+.dark .aurora-blob-a {
+  background: radial-gradient(circle at 35% 35%, rgba(255, 214, 10, 0.32), transparent 70%);
+}
+.dark .aurora-blob-b {
+  background: radial-gradient(circle at 60% 40%, rgba(255, 155, 66, 0.28), transparent 70%);
+}
+.dark .aurora-blob-c {
+  background: radial-gradient(circle at 45% 55%, rgba(255, 111, 176, 0.24), transparent 70%);
+}
+.dark .aurora-blob-d {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 214, 10, 0.18), transparent 70%);
+}
+
+@keyframes aurora-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6vw, 8vh, 0) scale(1.12);
+  }
+}
+@keyframes aurora-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  to {
+    transform: translate3d(-7vw, 6vh, 0) scale(0.95);
+  }
+}
+@keyframes aurora-drift-c {
+  from {
+    transform: translate3d(0, 0, 0) scale(0.98);
+  }
+  to {
+    transform: translate3d(5vw, -6vh, 0) scale(1.1);
+  }
+}
+@keyframes aurora-drift-d {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-4vw, -5vh, 0) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none;
+  }
 }
 
 .no-scrollbar {

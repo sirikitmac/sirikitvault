@@ -54,7 +54,7 @@ export function ResourceCard({
         }
       }}
       className={cn(
-        "group relative flex cursor-pointer flex-col overflow-hidden rounded-none border-r border-b border-[#E4E4DC] bg-white transition-shadow duration-200 ease-[var(--ease-out)] dark:border-[#2A2B22] dark:bg-[#141510]",
+        "group relative flex cursor-pointer flex-col overflow-hidden rounded-none border border-[#E4E4DC] bg-white transition-shadow duration-200 ease-[var(--ease-out)] dark:border-[#2A2B22] dark:bg-[#141510]",
         canHover &&
           "hover:z-10 hover:shadow-[8px_8px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[8px_8px_0_rgba(0,0,0,0.35)]"
       )}

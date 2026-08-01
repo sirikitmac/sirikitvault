@@ -8,6 +8,7 @@ import { suggestionsFor } from "@/lib/filter";
 import { faviconFor } from "@/lib/utils";
 import { CategoryMarquee } from "@/components/category-marquee";
 import { ScrambleText } from "@/components/scramble-text";
+import { ParticleField } from "@/components/particle-field";
 
 function formatClock(date: Date) {
   const hours24 = date.getHours();
@@ -63,7 +64,13 @@ export function Hero({
   const showSuggestions = focused && query.trim().length > 0;
 
   return (
-    <section id="top" className="mx-auto w-[min(100%-1.5rem,72rem)] pt-16 sm:pt-24">
+    <section id="top" className="relative pt-16 sm:pt-24">
+      {/* Faint particle trace, hero-bound only — clipped to this section's box. */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <ParticleField />
+      </div>
+
+      <div className="mx-auto w-[min(100%-1.5rem,72rem)]">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
         <div className="hidden w-full items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30 lg:flex">
@@ -82,7 +89,7 @@ export function Hero({
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05 }}
-          className="break-words font-display text-[clamp(2.1rem,9vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight sm:text-[clamp(2.6rem,7vw,4.75rem)] lg:mt-3"
+          className="break-words font-display text-[clamp(2.1rem,9vw,4.75rem)] font-bold leading-[1.02] tracking-tight sm:text-[clamp(2.6rem,7vw,4.75rem)] lg:mt-3"
         >
           <ScrambleText text="SirikitVault" startDelay={150} />
           <ScrambleText text=".dev" startIndex={12} startDelay={150} className="text-gradient" />
@@ -228,6 +235,7 @@ export function Hero({
       >
         <CategoryMarquee onPickCategory={onPickCategory} />
       </motion.div>
+      </div>
       </div>
     </section>
   );

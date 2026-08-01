@@ -136,6 +136,7 @@ export default function Home() {
                   eyebrow="The essentials"
                   title="Featured resources"
                   count={featured.length}
+                  highlightWord="Featured"
                 />
                 <Grid>
                   {featured.map((r, i) => (
@@ -157,6 +158,8 @@ export default function Home() {
                   eyebrow="Fresh in the vault"
                   title="Recently added"
                   count={recent.length}
+                  highlightWord="added"
+                  accent="green"
                 />
                 <Grid>
                   {recent.map((r, i) => (
@@ -177,6 +180,7 @@ export default function Home() {
                   eyebrow="Everything"
                   title="All resources"
                   count={resources.length}
+                  highlightWord="All"
                 />
                 <Grid>
                   {sortedAllResources.map((r, i) => (
@@ -214,10 +218,8 @@ export default function Home() {
 
 function Grid({ children }: { children: React.ReactNode }) {
   return (
-    <div className="border-l border-t border-[#E4E4DC] dark:border-[#2A2B22]">
-      <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {children}
-      </div>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {children}
     </div>
   );
 }
