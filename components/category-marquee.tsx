@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { resources } from "@/data/resources";
 import type { Category } from "@/types/resource";
@@ -65,54 +65,66 @@ function MarqueeRow({
 
   return (
     <div
-      className={`group relative flex min-h-[52px] flex-1 items-stretch overflow-hidden transition-colors duration-[120ms] lg:min-h-0 ${
+      className={`group relative flex min-h-[52px] flex-1 items-stretch overflow-hidden transition-colors duration-[120ms] ease-[var(--ease-out)] lg:min-h-0 ${
         active ? "bg-[#FFD60A] text-black" : "bg-transparent text-inherit"
       }`}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
-      <button
+      <motion.button
         type="button"
         onClick={handleSelect}
         onFocus={() => setActive(true)}
         onBlur={() => setActive(false)}
+        whileTap={{ scale: 0.98 }}
+        transition={{ duration: 0.1, ease: [0.23, 1, 0.32, 1] }}
         aria-label={`Filter by ${label}`}
         className="flex flex-1 cursor-pointer items-center justify-center overflow-hidden px-3"
       >
-        {active ? (
-          <motion.div
-            key="marquee"
-            initial={{ rotateX: 90, opacity: 0 }}
-            animate={{ rotateX: 0, opacity: 1 }}
-            transition={{ duration: 0.15 }}
-            className="w-full"
-          >
-            {names.length > 0 ? (
-              <div className="w-full overflow-hidden">
-                <div className="marquee-track">
-                  <span className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
-                    {sequence}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
-                  >
-                    {sequence}
-                  </span>
+        <AnimatePresence mode="wait">
+          {active ? (
+            <motion.div
+              key="marquee"
+              initial={{ rotateX: 90, opacity: 0 }}
+              animate={{ rotateX: 0, opacity: 1 }}
+              exit={{ rotateX: -90, opacity: 0 }}
+              transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+              className="w-full"
+            >
+              {names.length > 0 ? (
+                <div className="w-full overflow-hidden">
+                  <div className="marquee-track">
+                    <span className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                      {sequence}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+                    >
+                      {sequence}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
-                {label}
-              </span>
-            )}
-          </motion.div>
-        ) : (
-          <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
-            {label}
-          </span>
-        )}
-      </button>
+              ) : (
+                <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                  {label}
+                </span>
+              )}
+            </motion.div>
+          ) : (
+            <motion.span
+              key="label"
+              initial={{ rotateX: 90, opacity: 0 }}
+              animate={{ rotateX: 0, opacity: 1 }}
+              exit={{ rotateX: -90, opacity: 0 }}
+              transition={{ duration: 0.1, ease: [0.23, 1, 0.32, 1] }}
+              className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-extrabold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+            >
+              {label}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </motion.button>
 
       {/* Direct-apply affordance for touch — desktop already applies on a single click. */}
       <button

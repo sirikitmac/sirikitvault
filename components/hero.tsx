@@ -1,12 +1,24 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Search, CornerDownLeft, Tag, X } from "lucide-react";
 import { resources } from "@/data/resources";
 import { suggestionsFor } from "@/lib/filter";
 import { faviconFor } from "@/lib/utils";
 import { CategoryMarquee } from "@/components/category-marquee";
+import { ScrambleText } from "@/components/scramble-text";
+
+function formatClock(date: Date) {
+  const hours24 = date.getHours();
+  const minutes = date.getMinutes();
+  const period = hours24 >= 12 ? "PM" : "AM";
+  const hours12 = hours24 % 12 || 12;
+  return {
+    hm: `${String(hours12).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`,
+    period,
+  };
+}
 
 export function Hero({
   query,
@@ -25,6 +37,14 @@ export function Hero({
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [focused, setFocused] = useState(false);
+  const [clock, setClock] = useState<{ hm: string; period: string } | null>(null);
+
+  // Live local time, ticks client-side only to avoid hydration mismatch.
+  useEffect(() => {
+    setClock(formatClock(new Date()));
+    const id = setInterval(() => setClock(formatClock(new Date())), 1000);
+    return () => clearInterval(id);
+  }, []);
 
   // ⌘K / Ctrl+K focuses the vault search, Raycast-style.
   useEffect(() => {
@@ -46,13 +66,26 @@ export function Hero({
     <section id="top" className="mx-auto w-[min(100%-1.5rem,72rem)] pt-16 sm:pt-24">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="hidden w-full items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30 lg:flex">
+          <span className="cell-label text-[10px] opacity-80">
+            ◇ {resourceCount} resources indexed
+          </span>
+          {clock && (
+            <span className="tabular-nums">
+              {clock.hm}
+              <span className="ml-0.5 align-top text-[8px]">{clock.period}</span>
+            </span>
+          )}
+        </div>
+
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05 }}
-          className="break-words font-display text-[clamp(2.1rem,9vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight sm:text-[clamp(2.6rem,7vw,4.75rem)]"
+          className="break-words font-display text-[clamp(2.1rem,9vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight sm:text-[clamp(2.6rem,7vw,4.75rem)] lg:mt-3"
         >
-          SirikitVault<span className="text-gradient">.dev</span>
+          <ScrambleText text="SirikitVault" startDelay={150} />
+          <ScrambleText text=".dev" startIndex={12} startDelay={150} className="text-gradient" />
         </motion.h1>
 
         <motion.p
@@ -61,8 +94,11 @@ export function Hero({
           transition={{ duration: 0.55, delay: 0.12 }}
           className="mt-4 max-w-xl text-balance text-[15px] leading-relaxed text-black/55 dark:text-white/55 sm:text-base"
         >
-          My curated collection of UI/UX resources, design inspiration,
-          components, animations, assets, and developer tools.
+          <ScrambleText
+            text="My curated collection of UI/UX resources, design inspiration, components, animations, assets, and developer tools."
+            startDelay={420}
+            className="w-full"
+          />
         </motion.p>
 
         {/* Command-bar search */}
@@ -107,8 +143,16 @@ export function Hero({
             )}
           </div>
 
-          {showSuggestions && (names.length > 0 || tags.length > 0) && (
-            <div className="absolute inset-x-0 top-full mt-2 max-h-[60vh] overflow-y-auto border border-black/15 bg-white text-left dark:border-white/15 dark:bg-[#141510]">
+          <AnimatePresence>
+            {showSuggestions && (names.length > 0 || tags.length > 0) && (
+              <motion.div
+                key="suggestions"
+                initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                className="absolute inset-x-0 top-full mt-2 max-h-[60vh] origin-top overflow-y-auto border border-black/15 bg-white text-left dark:border-white/15 dark:bg-[#141510]"
+              >
               {names.map((r) => (
                 <a
                   key={r.id}
@@ -147,8 +191,9 @@ export function Hero({
                   ))}
                 </div>
               )}
-            </div>
-          )}
+            </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
 
         {/* Stats */}

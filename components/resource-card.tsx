@@ -23,6 +23,7 @@ export function ResourceCard({
   index?: number;
 }) {
   const [canHover, setCanHover] = useState(true);
+  const [faviconLoaded, setFaviconLoaded] = useState(false);
 
   useEffect(() => {
     setCanHover(
@@ -37,7 +38,11 @@ export function ResourceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.3) }}
-      whileHover={canHover ? { scale: 1.03 } : undefined}
+      whileHover={
+        canHover
+          ? { scale: 1.03, transition: { duration: 0.2, ease: [0.23, 1, 0.32, 1] } }
+          : undefined
+      }
       whileTap={{ scale: 0.98 }}
       onClick={onOpen}
       role="button"
@@ -48,7 +53,11 @@ export function ResourceCard({
           onOpen();
         }
       }}
-      className="group relative flex cursor-pointer flex-col overflow-hidden rounded-none border-r border-b border-[#E4E4DC] bg-white transition-shadow duration-200 ease-out hover:z-10 hover:shadow-[8px_8px_0_rgba(0,0,0,0.15)] dark:border-[#2A2B22] dark:bg-[#141510] dark:hover:shadow-[8px_8px_0_rgba(0,0,0,0.35)]"
+      className={cn(
+        "group relative flex cursor-pointer flex-col overflow-hidden rounded-none border-r border-b border-[#E4E4DC] bg-white transition-shadow duration-200 ease-[var(--ease-out)] dark:border-[#2A2B22] dark:bg-[#141510]",
+        canHover &&
+          "hover:z-10 hover:shadow-[8px_8px_0_rgba(0,0,0,0.15)] dark:hover:shadow-[8px_8px_0_rgba(0,0,0,0.35)]"
+      )}
     >
       {/* Preview */}
       <div
@@ -65,7 +74,11 @@ export function ResourceCard({
               src={faviconFor(resource.url)}
               alt=""
               loading="lazy"
-              className="h-8 w-8"
+              onLoad={() => setFaviconLoaded(true)}
+              className={cn(
+                "h-8 w-8 opacity-0 transition-opacity duration-200 ease-[var(--ease-out)]",
+                faviconLoaded && "opacity-100"
+              )}
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
