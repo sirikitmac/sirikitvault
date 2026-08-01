@@ -28,7 +28,7 @@ export function Navbar({
             type="button"
             onClick={onToggleFavorites}
             aria-pressed={favoritesActive}
-            className={`flex h-9 items-center gap-1.5 rounded-none border border-black bg-transparent px-3 text-xs font-medium text-black transition-all hover:scale-[1.03] active:scale-95 ${
+            className={`flex h-11 items-center gap-1.5 rounded-none border border-black bg-transparent px-3 text-xs font-medium text-black transition-all hover:scale-[1.03] active:scale-95 sm:h-9 ${
               favoritesActive ? "bg-black text-[#FFD60A]" : ""
             }`}
           >

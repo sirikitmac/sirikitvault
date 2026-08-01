@@ -17,6 +17,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Paid"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "aceternity-ui",
@@ -28,6 +29,7 @@ export const resources: Resource[] = [
     tags: ["React", "Tailwind", "Motion", "Components", "Free"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "refero-styles",
@@ -39,6 +41,7 @@ export const resources: Resource[] = [
     tags: ["Reference", "Web Design", "Product Design", "Free"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "mobbin",
@@ -50,6 +53,7 @@ export const resources: Resource[] = [
     tags: ["Mobile", "Reference", "Product Design", "iOS"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "godly",
@@ -61,6 +65,7 @@ export const resources: Resource[] = [
     tags: ["Landing Pages", "Web Design", "Reference"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "variant-ui",
@@ -70,6 +75,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "kombai",
@@ -80,6 +86,7 @@ export const resources: Resource[] = [
     category: "AI Tools",
     tags: ["AI", "Developer", "React", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "design-engineer",
@@ -90,6 +97,7 @@ export const resources: Resource[] = [
     category: "References",
     tags: ["Design Reference", "Developer", "Reading", "Reference"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "shadcn-ui",
@@ -101,6 +109,7 @@ export const resources: Resource[] = [
     tags: ["React", "Tailwind", "Components", "Free", "Open Source"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "10x-app",
@@ -110,6 +119,7 @@ export const resources: Resource[] = [
     category: "Productivity",
     tags: ["Productivity", "Tools", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "originkit",
@@ -119,6 +129,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Developer", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "21st-dev",
@@ -129,6 +140,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["React", "Tailwind", "Components", "Community", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "componentry",
@@ -138,6 +150,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Developer", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "swishy-ai",
@@ -147,6 +160,7 @@ export const resources: Resource[] = [
     category: "AI Tools",
     tags: ["AI", "Design", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "react-bits",
@@ -158,6 +172,7 @@ export const resources: Resource[] = [
     tags: ["React", "Animation", "Components", "Free"],
     featured: true,
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "coooldock",
@@ -167,6 +182,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "macOS", "Paid"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "ultra-mock",
@@ -176,6 +192,7 @@ export const resources: Resource[] = [
     category: "Mockups",
     tags: ["Mockups", "Assets", "Presentation", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "javii",
@@ -185,6 +202,7 @@ export const resources: Resource[] = [
     category: "References",
     tags: ["Design Reference", "Portfolio", "Reference"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "selected-site",
@@ -194,6 +212,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Web Design", "Curated"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "macfolio",
@@ -203,6 +222,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["macOS", "Portfolio", "Assets", "Reference"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "colorflow",
@@ -213,6 +233,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Color", "Gradients", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "lightswind-ui",
@@ -222,6 +243,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Tailwind", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "primeui",
@@ -231,6 +253,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Paid"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "before-click",
@@ -240,6 +263,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Web Design"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "vibeui",
@@ -249,6 +273,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "zeusui",
@@ -258,6 +283,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "element-ui",
@@ -267,6 +293,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "UI Kit", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "finstack",
@@ -276,6 +303,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Web Design", "Paid"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "land-book",
@@ -286,6 +314,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Landing Pages", "Reference", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "behance",
@@ -296,6 +325,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Portfolio", "Free"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
   {
     id: "dribbble",
@@ -306,6 +336,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Community"],
     dateAdded: "2026-05-02",
+    recommended: true,
   },
 
   // ───────────────────────── Icons ─────────────────────────
@@ -317,6 +348,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "Assets", "Free"],
     dateAdded: "2026-05-20",
+    recommended: true,
   },
   {
     id: "thiings",
@@ -327,6 +359,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "3D", "Free", "Assets"],
     dateAdded: "2026-05-20",
+    recommended: true,
   },
   {
     id: "fffuel",
@@ -337,6 +370,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["SVG", "Generators", "Backgrounds", "Free"],
     dateAdded: "2026-05-20",
+    recommended: true,
   },
   {
     id: "phosphor-icons",
@@ -347,6 +381,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "Open Source", "Free"],
     dateAdded: "2026-05-20",
+    recommended: true,
   },
   {
     id: "cascade-icons",
@@ -356,6 +391,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "Assets", "Free"],
     dateAdded: "2026-05-20",
+    recommended: true,
   },
 
   // ───────────────────────── Fonts ─────────────────────────
@@ -368,6 +404,7 @@ export const resources: Resource[] = [
     category: "Fonts",
     tags: ["Typography", "Free", "Generator"],
     dateAdded: "2026-05-28",
+    recommended: true,
   },
   {
     id: "precise-type",
@@ -377,6 +414,7 @@ export const resources: Resource[] = [
     category: "Fonts",
     tags: ["Typography", "Logos", "Branding", "Free"],
     dateAdded: "2026-05-28",
+    recommended: true,
   },
   {
     id: "fontshare",
@@ -387,6 +425,7 @@ export const resources: Resource[] = [
     category: "Fonts",
     tags: ["Typography", "Free", "Fonts"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // ─────────────────────── Components / Animation ───────────────────────
@@ -398,6 +437,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Animation", "Components", "Motion", "Paid"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "motion-dev",
@@ -408,6 +448,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Animation", "Motion", "React", "Open Source", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // ─────────────────── Auto-labeled by Claude ───────────────────
@@ -420,6 +461,7 @@ export const resources: Resource[] = [
     category: "Backgrounds",
     tags: ["Backgrounds", "Assets", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "animista",
@@ -430,6 +472,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["CSS", "Animation", "Generator", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "fluid-cad",
@@ -439,6 +482,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["Tools", "Developer", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "opencli",
@@ -448,6 +492,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["CLI", "Developer", "Tools", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "ascii-magic",
@@ -457,6 +502,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["Generator", "ASCII", "Fun", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "animos",
@@ -466,6 +512,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Animation", "Motion", "Tools", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "ship-studio",
@@ -475,6 +522,7 @@ export const resources: Resource[] = [
     category: "References",
     tags: ["Design Reference", "Studio", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "dump-cam",
@@ -484,6 +532,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Photos", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "doron-supply",
@@ -493,6 +542,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Free"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     // NOTE: The original doc listed the same URL as Doron Supply here.
@@ -505,6 +555,7 @@ export const resources: Resource[] = [
     category: "Productivity",
     tags: ["Productivity", "Bookmarks", "Tools"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "blank-2-7",
@@ -515,6 +566,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Figma", "UI Kit", "Paid"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "dark-bento-ui-kit",
@@ -525,6 +577,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Figma", "SaaS", "Bento Layouts", "Dark Mode", "Paid"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "magicdraft",
@@ -535,6 +588,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Figma", "Dashboard", "Dark Mode", "SaaS", "Paid"],
     dateAdded: "2026-06-10",
+    recommended: true,
   },
   {
     id: "miromiro",
@@ -544,6 +598,7 @@ export const resources: Resource[] = [
     category: "Productivity",
     tags: ["Tools", "Productivity", "Free"],
     dateAdded: "2026-06-24",
+    recommended: true,
   },
   {
     id: "ssgoi",
@@ -554,6 +609,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Animation", "Transitions", "Developer", "Open Source", "Free"],
     dateAdded: "2026-06-24",
+    recommended: true,
   },
   {
     id: "quarkdown",
@@ -564,6 +620,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["Markdown", "Developer", "Free", "Open Source"],
     dateAdded: "2026-06-24",
+    recommended: true,
   },
 
   // ──────────────── Animation packs (links found by Claude) ────────────────
@@ -576,6 +633,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Lottie", "Motion", "Animation", "Assets", "Free"],
     dateAdded: "2026-07-14",
+    recommended: true,
   },
   {
     id: "iconscout",
@@ -586,6 +644,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "Illustrations", "3D", "Animation", "Free"],
     dateAdded: "2026-07-14",
+    recommended: true,
   },
   {
     id: "flaticon-animated",
@@ -596,6 +655,7 @@ export const resources: Resource[] = [
     category: "Icons",
     tags: ["Icons", "Animation", "Assets", "Free"],
     dateAdded: "2026-07-14",
+    recommended: true,
   },
   {
     id: "rive",
@@ -606,6 +666,7 @@ export const resources: Resource[] = [
     category: "Animations",
     tags: ["Motion", "Interactive", "Developer", "Animation", "Free"],
     dateAdded: "2026-07-14",
+    recommended: true,
   },
 
   // ─────────────────── Added 2026-08-01 batch ───────────────────
@@ -618,6 +679,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "magic-ui",
@@ -628,6 +690,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["React", "Tailwind", "Animation", "Components", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "smooth-ui",
@@ -637,6 +700,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Components", "Web Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "vue-bits",
@@ -647,6 +711,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Vue", "Animation", "Components", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "svelte-bits",
@@ -657,6 +722,7 @@ export const resources: Resource[] = [
     category: "UI Components",
     tags: ["Svelte", "Animation", "Components", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // AI Tools
@@ -669,6 +735,7 @@ export const resources: Resource[] = [
     category: "AI Tools",
     tags: ["AI", "Diagrams", "Generator", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "motionsites-ai",
@@ -678,6 +745,7 @@ export const resources: Resource[] = [
     category: "AI Tools",
     tags: ["AI", "Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // Developer Tools
@@ -690,6 +758,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["shadcn/ui", "Tailwind", "Developer", "Theming", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "react-native",
@@ -700,6 +769,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["React", "Mobile", "Developer", "Documentation", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "osmo-supply",
@@ -710,6 +780,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["Developer", "Snippets", "Interactive", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "refero-mcp",
@@ -720,6 +791,7 @@ export const resources: Resource[] = [
     category: "Developer Tools",
     tags: ["MCP", "Developer", "Reference", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // UI Inspiration
@@ -731,6 +803,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Web Design", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "design-spells",
@@ -740,6 +813,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Web Design"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "obsidian-assembly",
@@ -749,6 +823,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Web Design"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "active-theory",
@@ -759,6 +834,7 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Web Design", "Studio"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // Backgrounds
@@ -770,6 +846,7 @@ export const resources: Resource[] = [
     category: "Backgrounds",
     tags: ["Backgrounds", "Gradients", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "grainient",
@@ -780,6 +857,7 @@ export const resources: Resource[] = [
     category: "Backgrounds",
     tags: ["Backgrounds", "Gradients", "Textures", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "gradients-fm",
@@ -789,6 +867,7 @@ export const resources: Resource[] = [
     category: "Backgrounds",
     tags: ["Backgrounds", "Gradients", "CSS", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // Design Assets
@@ -800,6 +879,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Reference"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "hyperiux-vault",
@@ -809,6 +889,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "useblank",
@@ -818,6 +899,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "craftwork",
@@ -828,6 +910,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Figma", "UI Kit", "Assets", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "rico-supply",
@@ -837,6 +920,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "toggle-supply",
@@ -846,6 +930,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "lexington-themes",
@@ -855,6 +940,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Themes", "Assets", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "supply-family",
@@ -864,6 +950,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Assets", "Design", "Free"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "velox-themes",
@@ -873,6 +960,7 @@ export const resources: Resource[] = [
     category: "Design Assets",
     tags: ["Themes", "Assets", "Paid"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
 
   // References
@@ -884,6 +972,7 @@ export const resources: Resource[] = [
     category: "References",
     tags: ["Design Reference", "Tools", "Reference"],
     dateAdded: "2026-08-01",
+    recommended: true,
   },
   {
     id: "unesco-museum",
@@ -892,6 +981,963 @@ export const resources: Resource[] = [
     description: "Reference resource from the vault's collection.",
     category: "References",
     tags: ["Reference", "Museum"],
+    dateAdded: "2026-08-01",
+    recommended: true,
+  },
+
+  // ─────────────────── Recommended additions (2026-08-01) ───────────────────
+  {
+    id: "saas-landing-page",
+    name: "SaaS Landing Page",
+    url: "https://saaslandingpage.com/",
+    description:
+      "A curated gallery of SaaS landing page designs for inspiration and reference.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Landing Pages", "Free"],
+    dateAdded: "2026-08-01",
+    recommended: true,
+  },
+  {
+    id: "awwwards",
+    name: "Awwwards",
+    url: "https://www.awwwards.com/",
+    description:
+      "Recognizes and promotes the best web design talent — a long-running gallery of award-winning sites.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+    recommended: true,
+  },
+
+  // ─────────────────── Imported from UI-UX-Resources repo (2026-08-01) ───────────────────
+  {
+    id: "ui-design-daily",
+    name: "UI Design Daily",
+    url: "https://uidesigndaily.com/",
+    description:
+      "A daily-updated gallery of UI component inspiration across many design tools.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "undrawco",
+    name: "Undraw.co",
+    url: "https://undraw.co/",
+    description:
+      "Open-source illustrations for any idea you can imagine and create.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "open-peeps",
+    name: "Open Peeps",
+    url: "https://www.openpeeps.com/",
+    description:
+      "A hand-drawn illustration library of mix-and-match people.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "blush",
+    name: "Blush",
+    url: "https://blush.design/",
+    description:
+      "Customizable illustrations with a Figma plugin for mixing and matching styles.",
+    category: "Design Assets",
+    tags: ["Assets", "Figma", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "humaaans",
+    name: "Humaaans",
+    url: "https://www.humaaans.com/",
+    description:
+      "Illustrations of people with the ability to mix and match.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "open-doodles",
+    name: "Open Doodles",
+    url: "https://www.opendoodles.com/",
+    description:
+      "A free set of sketchy, open-source illustrations.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "freepik",
+    name: "Freepik",
+    url: "https://www.freepik.com",
+    description:
+      "Free vectors, stock photos, PSD files and icons.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "vecteezy",
+    name: "Vecteezy",
+    url: "https://www.vecteezy.com/",
+    description:
+      "Millions of free vectors, photos and videos for design projects.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "world-vector-logo",
+    name: "World Vector Logo",
+    url: "https://worldvectorlogo.com/",
+    description:
+      "Download vector logos of well-known brands.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "black-illustrations",
+    name: "Black Illustrations",
+    url: "https://www.blackillustrations.com/",
+    description:
+      "Illustrations of Black people for digital products (free and premium).",
+    category: "Design Assets",
+    tags: ["Assets"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "html5-up",
+    name: "HTML5 UP",
+    url: "https://html5up.net/",
+    description:
+      "Free, responsive HTML5 and CSS3 site templates.",
+    category: "Design Assets",
+    tags: ["Assets", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "templatemo",
+    name: "Templatemo",
+    url: "https://templatemo.com/",
+    description:
+      "Free CSS and HTML5 website templates.",
+    category: "Design Assets",
+    tags: ["Assets", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "start-bootstrap",
+    name: "Start Bootstrap",
+    url: "https://startbootstrap.com/",
+    description:
+      "Free Bootstrap themes and templates.",
+    category: "Design Assets",
+    tags: ["Assets", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "bootswatch",
+    name: "Bootswatch",
+    url: "https://bootswatch.com/",
+    description:
+      "Free themes for Bootstrap, downloadable or swappable via CDN.",
+    category: "Design Assets",
+    tags: ["Assets", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "cruip",
+    name: "Cruip",
+    url: "https://cruip.com/free-templates/",
+    description:
+      "Free landing page and UI templates for startups, built with Tailwind CSS.",
+    category: "Design Assets",
+    tags: ["Assets", "Tailwind", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "hero-patterns",
+    name: "Hero Patterns",
+    url: "http://www.heropatterns.com/",
+    description:
+      "A collection of repeatable SVG background patterns.",
+    category: "Backgrounds",
+    tags: ["Backgrounds", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "google-fonts",
+    name: "Google Fonts",
+    url: "https://fonts.google.com/",
+    description:
+      "A library of around 1000 free, open source font families.",
+    category: "Fonts",
+    tags: ["Typography", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "dafont",
+    name: "DaFont",
+    url: "https://www.dafont.com/",
+    description:
+      "A large archive of freely downloadable fonts.",
+    category: "Fonts",
+    tags: ["Typography", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "font-squirrel",
+    name: "Font Squirrel",
+    url: "https://www.fontsquirrel.com/",
+    description:
+      "High quality, legitimately free fonts for commercial use.",
+    category: "Fonts",
+    tags: ["Typography", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "fontjoy",
+    name: "Fontjoy",
+    url: "https://fontjoy.com/",
+    description:
+      "Generate font pairings powered by a neural network.",
+    category: "Fonts",
+    tags: ["Typography", "Generator", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "fontpair",
+    name: "FontPair",
+    url: "https://fontpair.co/",
+    description:
+      "Discover and test font, color and icon pairings curated by designers.",
+    category: "Fonts",
+    tags: ["Typography", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "lexend",
+    name: "Lexend",
+    url: "https://www.lexend.com/",
+    description:
+      "A variable font family empirically shown to improve reading proficiency.",
+    category: "Fonts",
+    tags: ["Typography", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "open-foundry",
+    name: "Open Foundry",
+    url: "https://open-foundry.com",
+    description:
+      "A curated platform of free, open-source typefaces.",
+    category: "Fonts",
+    tags: ["Typography", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "feather-icons",
+    name: "Feather Icons",
+    url: "https://feathericons.com/",
+    description:
+      "Beautiful, customizable open source icons.",
+    category: "Icons",
+    tags: ["Icons", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "tabler-icons",
+    name: "Tabler Icons",
+    url: "https://tablericons.com/",
+    description:
+      "Over 4,500 highly customizable open source SVG icons.",
+    category: "Icons",
+    tags: ["Icons", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "simple-icons",
+    name: "Simple Icons",
+    url: "https://simpleicons.org/",
+    description:
+      "Free SVG icons for popular brands.",
+    category: "Icons",
+    tags: ["Icons", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "the-noun-project",
+    name: "The Noun Project",
+    url: "https://thenounproject.com/",
+    description:
+      "Millions of curated icons and stock photos created by a global community.",
+    category: "Icons",
+    tags: ["Icons", "Community", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "bootstrap-icons",
+    name: "Bootstrap Icons",
+    url: "https://icons.getbootstrap.com/",
+    description:
+      "Free, high quality SVG icons built for Bootstrap but usable anywhere.",
+    category: "Icons",
+    tags: ["Icons", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "remix-icon",
+    name: "Remix Icon",
+    url: "https://remixicon.com/",
+    description:
+      "An open source neutral-style icon system.",
+    category: "Icons",
+    tags: ["Icons", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "material-design-icons",
+    name: "Material Design Icons",
+    url: "https://pictogrammers.com/library/mdi/",
+    description:
+      "A library of icons and font packs for drop-in use in designs and development.",
+    category: "Icons",
+    tags: ["Icons", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "font-awesome",
+    name: "Font Awesome",
+    url: "https://fontawesome.com/",
+    description:
+      "The web's most popular icon set and toolkit.",
+    category: "Icons",
+    tags: ["Icons", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "boxicons",
+    name: "Boxicons",
+    url: "https://boxicons.com/",
+    description:
+      "A free collection of carefully crafted open source icons.",
+    category: "Icons",
+    tags: ["Icons", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "devicon",
+    name: "Devicon",
+    url: "https://devicon.dev/",
+    description:
+      "Icons representing programming languages and development tools.",
+    category: "Icons",
+    tags: ["Icons", "Developer", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "faviconio",
+    name: "Favicon.io",
+    url: "https://favicon.io/",
+    description:
+      "Generate a favicon from text, an image, or an emoji.",
+    category: "Icons",
+    tags: ["Icons", "Generator", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "realfavicongenerator",
+    name: "RealFaviconGenerator",
+    url: "https://realfavicongenerator.net/",
+    description:
+      "Generate favicons for all platforms, browsers and devices.",
+    category: "Icons",
+    tags: ["Icons", "Generator", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "mockuphone",
+    name: "Mockuphone",
+    url: "https://mockuphone.com/",
+    description:
+      "A free, simple device mockup generator for screenshots.",
+    category: "Mockups",
+    tags: ["Mockups", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "device-shots",
+    name: "Device Shots",
+    url: "https://deviceshots.com/",
+    description:
+      "Create device mockups from a screenshot or URL.",
+    category: "Mockups",
+    tags: ["Mockups", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "shot-snap",
+    name: "Shot Snap",
+    url: "https://shotsnapp.com/",
+    description:
+      "Create beautiful device mockup images for apps and websites.",
+    category: "Mockups",
+    tags: ["Mockups", "Presentation"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "screenshotrocks",
+    name: "Screenshot.rocks",
+    url: "https://screenshot.rocks/",
+    description:
+      "Create beautiful browser and mobile mockups in seconds.",
+    category: "Mockups",
+    tags: ["Mockups", "Presentation"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "tailwind-css",
+    name: "Tailwind CSS",
+    url: "https://tailwindcss.com/",
+    description:
+      "A utility-first CSS framework for rapidly building custom interfaces.",
+    category: "Developer Tools",
+    tags: ["Tailwind", "Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "bootstrap",
+    name: "Bootstrap",
+    url: "https://getbootstrap.com/",
+    description:
+      "The world's most popular front-end framework for building responsive sites.",
+    category: "Developer Tools",
+    tags: ["Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "bulma",
+    name: "Bulma",
+    url: "https://bulma.io/",
+    description:
+      "A free, open source CSS framework based on Flexbox.",
+    category: "Developer Tools",
+    tags: ["Developer", "CSS", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "foundation",
+    name: "Foundation",
+    url: "https://get.foundation/",
+    description:
+      "An advanced responsive front-end framework for prototyping and production.",
+    category: "Developer Tools",
+    tags: ["Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "uikit",
+    name: "UIKit",
+    url: "https://getuikit.com/",
+    description:
+      "A lightweight and modular front-end framework for web interfaces.",
+    category: "Developer Tools",
+    tags: ["Developer", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "figma",
+    name: "Figma",
+    url: "https://www.figma.com/graphic-design-tool/",
+    description:
+      "A collaborative interface design and prototyping tool.",
+    category: "Developer Tools",
+    tags: ["Developer", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "canva",
+    name: "Canva",
+    url: "https://www.canva.com/",
+    description:
+      "An easy-to-use online graphic design tool.",
+    category: "Developer Tools",
+    tags: ["Generator", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "excalidraw",
+    name: "Excalidraw",
+    url: "https://excalidraw.com/",
+    description:
+      "A virtual whiteboard for sketching hand-drawn like diagrams.",
+    category: "Developer Tools",
+    tags: ["Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "photopea",
+    name: "Photopea",
+    url: "https://www.photopea.com",
+    description:
+      "An advanced online image editor compatible with PSD, XCF and Sketch files.",
+    category: "Developer Tools",
+    tags: ["Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "gimp",
+    name: "GIMP",
+    url: "https://www.gimp.org/",
+    description:
+      "A free and open source image manipulation program.",
+    category: "Developer Tools",
+    tags: ["Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "inkscape",
+    name: "Inkscape",
+    url: "https://inkscape.org/",
+    description:
+      "A free and open source vector graphics editor.",
+    category: "Developer Tools",
+    tags: ["Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "tinypng",
+    name: "TinyPNG",
+    url: "https://tinypng.com/",
+    description:
+      "Smart lossy compression for PNG, JPG and modern image formats.",
+    category: "Developer Tools",
+    tags: ["Developer", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "squoosh",
+    name: "Squoosh",
+    url: "https://squoosh.app/",
+    description:
+      "A browser-based image compression tool from Google Chrome Labs.",
+    category: "Developer Tools",
+    tags: ["Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "codepen",
+    name: "CodePen",
+    url: "https://codepen.io/",
+    description:
+      "A social development environment for front-end code snippets and demos.",
+    category: "Developer Tools",
+    tags: ["Developer", "Community", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "animatecss",
+    name: "Animate.css",
+    url: "https://animate.style/",
+    description:
+      "A cross-browser library of ready-to-use CSS animations.",
+    category: "Animations",
+    tags: ["CSS", "Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "animejs",
+    name: "Anime.js",
+    url: "https://animejs.com/",
+    description:
+      "A lightweight JavaScript animation library.",
+    category: "Animations",
+    tags: ["Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "hovercss",
+    name: "Hover.css",
+    url: "http://ianlunn.github.io/Hover/",
+    description:
+      "A collection of CSS3 powered hover effects for links, buttons and images.",
+    category: "Animations",
+    tags: ["CSS", "Animation", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "zdog",
+    name: "Zdog",
+    url: "https://zzz.dog/",
+    description:
+      "A pseudo-3D engine for canvas and SVG.",
+    category: "Animations",
+    tags: ["Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "gsap",
+    name: "GSAP",
+    url: "https://gsap.com/",
+    description:
+      "A professional-grade JavaScript animation library for the modern web.",
+    category: "Animations",
+    tags: ["Animation", "Developer", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "particlesjs",
+    name: "Particles.js",
+    url: "https://vincentgarreau.com/particles.js/",
+    description:
+      "A lightweight JavaScript library for creating particle backgrounds.",
+    category: "Animations",
+    tags: ["Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "tsparticles",
+    name: "tsParticles",
+    url: "https://particles.js.org/",
+    description:
+      "A dependency-free particle engine for interactive backgrounds and effects.",
+    category: "Animations",
+    tags: ["Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "tiltjs",
+    name: "Tilt.js",
+    url: "http://gijsroge.github.io/tilt.js/",
+    description:
+      "A lightweight 3D tilt hover effect library.",
+    category: "Animations",
+    tags: ["Animation", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "animate-on-scroll",
+    name: "Animate On Scroll",
+    url: "https://michalsnik.github.io/aos/",
+    description:
+      "Animate elements as they scroll into view.",
+    category: "Animations",
+    tags: ["Animation", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "creative-tim",
+    name: "Creative Tim",
+    url: "https://www.creative-tim.com/",
+    description:
+      "UI kits, templates and dashboards built on top of Bootstrap and React.",
+    category: "UI Components",
+    tags: ["Components", "Web Design"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "adminlte",
+    name: "AdminLTE",
+    url: "https://adminlte.io/",
+    description:
+      "A free, open source admin dashboard template.",
+    category: "UI Components",
+    tags: ["Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "untitled-ui",
+    name: "Untitled UI",
+    url: "https://www.untitledui.com/",
+    description:
+      "A large Figma UI kit and React component library.",
+    category: "UI Components",
+    tags: ["Components", "Figma", "UI Kit", "Paid"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "spinkit",
+    name: "SpinKit",
+    url: "https://tobiasahlin.com/spinkit/",
+    description:
+      "A collection of loading spinners with pure CSS animations.",
+    category: "UI Components",
+    tags: ["Components", "CSS", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "material-ui",
+    name: "Material UI",
+    url: "https://mui.com/material-ui/",
+    description:
+      "React components implementing Google's Material Design.",
+    category: "UI Components",
+    tags: ["React", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "chakra-ui",
+    name: "Chakra UI",
+    url: "https://chakra-ui.com/",
+    description:
+      "A simple, modular and accessible component library for React.",
+    category: "UI Components",
+    tags: ["React", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "ant-design",
+    name: "Ant Design",
+    url: "https://ant.design/",
+    description:
+      "An enterprise-class UI design language and React component library.",
+    category: "UI Components",
+    tags: ["React", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "react-bootstrap",
+    name: "React Bootstrap",
+    url: "https://react-bootstrap.github.io/",
+    description:
+      "Bootstrap components rebuilt for React.",
+    category: "UI Components",
+    tags: ["React", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "blueprintjs",
+    name: "BlueprintJS",
+    url: "https://blueprintjs.com/",
+    description:
+      "A React UI toolkit for the web, optimized for data-dense desktop apps.",
+    category: "UI Components",
+    tags: ["React", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "vuetify",
+    name: "Vuetify",
+    url: "https://vuetifyjs.com/en/",
+    description:
+      "A Vue component framework implementing Material Design.",
+    category: "UI Components",
+    tags: ["Vue", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "quasar",
+    name: "Quasar",
+    url: "https://quasar.dev/",
+    description:
+      "Build responsive Vue.js apps for many platforms from one codebase.",
+    category: "UI Components",
+    tags: ["Vue", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "angular-material",
+    name: "Angular Material",
+    url: "https://material.angular.dev/",
+    description:
+      "Material Design components for Angular.",
+    category: "UI Components",
+    tags: ["Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "primeng",
+    name: "PrimeNG",
+    url: "https://www.primefaces.org/primeng/#/",
+    description:
+      "A collection of rich UI components for Angular.",
+    category: "UI Components",
+    tags: ["Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "svelte-material-ui",
+    name: "Svelte Material UI",
+    url: "https://sveltematerialui.com/",
+    description:
+      "Material Design components for Svelte apps.",
+    category: "UI Components",
+    tags: ["Svelte", "Components", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "material-design",
+    name: "Material Design",
+    url: "https://m3.material.io/",
+    description:
+      "Google's open-source design system for building digital experiences.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "apple-design-resources",
+    name: "Apple Design Resources",
+    url: "https://developer.apple.com/design/resources/",
+    description:
+      "Official design templates and resources for Apple platforms.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "polaris",
+    name: "Polaris",
+    url: "https://polaris-react.shopify.com/",
+    description:
+      "Shopify's design system and component library.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "carbon-design-system",
+    name: "Carbon Design System",
+    url: "https://www.carbondesignsystem.com/",
+    description:
+      "IBM's open source design system for products and digital experiences.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "primer",
+    name: "Primer",
+    url: "https://primer.style/",
+    description:
+      "GitHub's design system for building consistent, accessible interfaces.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Open Source", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "spectrum",
+    name: "Spectrum",
+    url: "https://spectrum.adobe.com/",
+    description:
+      "Adobe's design system for building consistent user experiences.",
+    category: "References",
+    tags: ["Design Reference", "Reference", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "can-i-use",
+    name: "Can I Use",
+    url: "https://caniuse.com/",
+    description:
+      "Up-to-date browser support tables for front-end web technologies.",
+    category: "References",
+    tags: ["Developer", "Reference", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "whimsical",
+    name: "Whimsical",
+    url: "https://whimsical.com/",
+    description:
+      "A visual workspace for flowcharts, wireframes, whiteboards and docs.",
+    category: "Productivity",
+    tags: ["Productivity", "Tools", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "removebg",
+    name: "Remove.bg",
+    url: "https://www.remove.bg/",
+    description:
+      "Automatically remove image backgrounds in seconds.",
+    category: "AI Tools",
+    tags: ["AI", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "onepagelove",
+    name: "Onepagelove",
+    url: "https://onepagelove.com/",
+    description:
+      "A curated gallery of one-page website designs and templates.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Web Design", "Curated", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "codrops",
+    name: "Codrops",
+    url: "https://tympanus.net/codrops/",
+    description:
+      "Tutorials and resources about web design and development trends.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Web Design", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "site-inspire",
+    name: "Site Inspire",
+    url: "https://www.siteinspire.com/",
+    description:
+      "A showcase of the finest web design, curated by category.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Web Design", "Curated", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "really-good-emails",
+    name: "Really Good Emails",
+    url: "https://reallygoodemails.com/",
+    description:
+      "A curated gallery of great email design.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Curated", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "collect-ui",
+    name: "Collect UI",
+    url: "http://collectui.com/",
+    description:
+      "Daily hand-picked user interface design inspiration.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Curated", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "lapa-ninja",
+    name: "lapa ninja",
+    url: "https://www.lapa.ninja/",
+    description:
+      "A gallery of the best landing page designs.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Landing Pages", "Free"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "page-flows",
+    name: "Page Flows",
+    url: "https://pageflows.com/",
+    description:
+      "UI/UX inspiration and real user flows recorded from top apps.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Mobile", "Paid"],
+    dateAdded: "2026-08-01",
+  },
+  {
+    id: "frontend-mentor",
+    name: "Frontend Mentor",
+    url: "https://www.frontendmentor.io/",
+    description:
+      "Real-world design challenges to practice front-end skills.",
+    category: "UI Inspiration",
+    tags: ["Reference", "Community", "Free"],
     dateAdded: "2026-08-01",
   },
 ];

@@ -28,4 +28,6 @@ export interface Resource {
   note?: string;
   /** Optional rating (1–5) — reserved for future expansion */
   rating?: number;
+  /** Marks a trusted, familiar source — shown as a "Recommended" label */
+  recommended?: boolean;
 }

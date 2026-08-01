@@ -50,7 +50,7 @@ export function Hero({
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05 }}
-          className="font-display text-[clamp(2.6rem,7vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight"
+          className="break-words font-display text-[clamp(2.1rem,9vw,4.75rem)] font-extrabold leading-[1.02] tracking-tight sm:text-[clamp(2.6rem,7vw,4.75rem)]"
         >
           SirikitVault<span className="text-gradient">.dev</span>
         </motion.h1>
@@ -101,14 +101,14 @@ export function Hero({
                 <X className="h-4 w-4" />
               </button>
             ) : (
-              <kbd className="hidden shrink-0 rounded-none border border-black/20 bg-black/[0.04] px-1.5 py-0.5 font-mono text-[11px] text-black/45 dark:border-white/20 dark:bg-white/[0.06] dark:text-white/45 sm:block">
+              <kbd className="hidden shrink-0 rounded-none border border-black/20 bg-black/[0.04] px-1.5 py-0.5 font-mono text-xs text-black/45 dark:border-white/20 dark:bg-white/[0.06] dark:text-white/45 sm:block">
                 ⌘K
               </kbd>
             )}
           </div>
 
           {showSuggestions && (names.length > 0 || tags.length > 0) && (
-            <div className="absolute inset-x-0 top-full mt-2 overflow-hidden border border-black/15 bg-white text-left dark:border-white/15 dark:bg-[#141510]">
+            <div className="absolute inset-x-0 top-full mt-2 max-h-[60vh] overflow-y-auto border border-black/15 bg-white text-left dark:border-white/15 dark:bg-[#141510]">
               {names.map((r) => (
                 <a
                   key={r.id}
@@ -156,7 +156,7 @@ export function Hero({
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-7 flex items-center gap-6 font-mono text-xs text-black/50 dark:text-white/50"
+          className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs text-black/50 dark:text-white/50"
         >
           <span>
             <span className="text-gradient text-base font-bold tabular-nums">

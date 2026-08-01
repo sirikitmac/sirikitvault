@@ -45,7 +45,7 @@ export function ResourceModal({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 sm:p-4"
       onClick={onClose}
     >
       <motion.div
@@ -54,20 +54,21 @@ export function ResourceModal({
         exit={{ opacity: 0, scale: 0.96 }}
         transition={{ duration: 0.2 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-3xl rounded-none border-2 border-black bg-white p-6 dark:border-[#FFD60A] dark:bg-[#141510] sm:p-10"
+        className="relative flex h-full w-full flex-col rounded-none border-black bg-white dark:border-[#FFD60A] dark:bg-[#141510] sm:h-auto sm:max-h-[90vh] sm:w-full sm:max-w-3xl sm:border-2"
       >
         <button
           type="button"
           aria-label="Close"
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-none border border-black/20 bg-transparent text-black/60 transition-all hover:scale-110 hover:bg-black/[0.08] dark:border-white/20 dark:text-white/60 dark:hover:bg-white/[0.12]"
+          className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-none border border-black/20 bg-white/90 text-black/60 transition-all hover:scale-110 hover:bg-black/[0.08] dark:border-white/20 dark:bg-[#141510]/90 dark:text-white/60 dark:hover:bg-white/[0.12] sm:h-9 sm:w-9"
         >
           <X className="h-4 w-4" />
         </button>
 
+        <div className="flex-1 overflow-y-auto p-6 sm:p-10">
         <div className="grid gap-8 sm:grid-cols-2">
           {/* Left column */}
-          <div className="flex flex-col">
+          <div className="order-2 flex flex-col sm:order-1">
             <h2 className="font-display text-2xl font-bold tracking-tight">
               {resource.name}
             </h2>
@@ -88,7 +89,7 @@ export function ResourceModal({
                 href={resource.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-1.5 rounded-none bg-[#FFD60A] px-3 py-2.5 text-sm font-semibold text-black transition-all hover:bg-[#E6B800] active:scale-[0.98]"
+                className="flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-none bg-[#FFD60A] px-3 py-2.5 text-sm font-semibold text-black transition-all hover:bg-[#E6B800] active:scale-[0.98] sm:min-h-0"
               >
                 Visit website
                 <ArrowUpRight className="h-4 w-4" />
@@ -101,7 +102,7 @@ export function ResourceModal({
                 aria-pressed={isFavorite}
                 onClick={() => onToggleFavorite(resource.id)}
                 className={cn(
-                  "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/20 bg-transparent transition-all hover:scale-110 active:scale-90 dark:border-white/20",
+                  "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-black/20 bg-transparent transition-all hover:scale-110 active:scale-90 dark:border-white/20 sm:h-10 sm:w-10",
                   isFavorite ? "text-rose-500" : "text-black/50 dark:text-white/60"
                 )}
               >
@@ -113,7 +114,7 @@ export function ResourceModal({
           {/* Right column */}
           <div
             className={cn(
-              "relative aspect-[4/3] overflow-hidden rounded-none border border-black/10 bg-gradient-to-br dark:border-white/10",
+              "relative order-1 aspect-[4/3] overflow-hidden rounded-none border border-black/10 bg-gradient-to-br dark:border-white/10 sm:order-2",
               gradientFor(resource.name)
             )}
           >
@@ -147,6 +148,7 @@ export function ResourceModal({
               )}
             />
           </div>
+        </div>
         </div>
       </motion.div>
     </motion.div>

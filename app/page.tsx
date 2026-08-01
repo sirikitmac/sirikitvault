@@ -37,6 +37,13 @@ export default function Home() {
         .slice(0, 4),
     []
   );
+  const sortedAllResources = useMemo(
+    () =>
+      [...resources].sort(
+        (a, b) => (a.recommended ? 0 : 1) - (b.recommended ? 0 : 1)
+      ),
+    []
+  );
 
   const toggleChip = (chip: string) =>
     setChips((prev) =>
@@ -130,7 +137,7 @@ export default function Home() {
                   title="Featured resources"
                   count={featured.length}
                 />
-                <Grid featured>
+                <Grid>
                   {featured.map((r, i) => (
                     <ResourceCard
                       key={r.id}
@@ -172,7 +179,7 @@ export default function Home() {
                   count={resources.length}
                 />
                 <Grid>
-                  {resources.map((r, i) => (
+                  {sortedAllResources.map((r, i) => (
                     <ResourceCard
                       key={r.id}
                       resource={r}
@@ -205,22 +212,10 @@ export default function Home() {
   );
 }
 
-function Grid({
-  children,
-  featured = false,
-}: {
-  children: React.ReactNode;
-  featured?: boolean;
-}) {
+function Grid({ children }: { children: React.ReactNode }) {
   return (
     <div className="border-l border-t border-[#E4E4DC] dark:border-[#2A2B22]">
-      <div
-        className={
-          featured
-            ? "grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3"
-            : "grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        }
-      >
+      <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {children}
       </div>
     </div>
