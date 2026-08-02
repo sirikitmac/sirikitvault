@@ -3,18 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --bg: 250 250 246; /* warm white */
-  --fg: 42 34 27; /* warm charcoal-brown */
-  --muted: 138 124 111;
-  --accent-a: #ffd60a;
-  --accent-b: #ffd60a;
-  --accent-glow: 255 214 10;
-
-  /* Warm accent family — amber → copper → ember rose. One family, three stops. */
-  --accent-amber: #ffd60a;
-  --accent-copper: #ff9b42;
-  --accent-rose: #ff6fb0;
-  --accent-gradient: linear-gradient(100deg, var(--accent-amber) 0%, var(--accent-copper) 55%, var(--accent-rose) 100%);
+  --bg: 250 250 248; /* off-white */
+  --fg: 18 18 16; /* near-black */
+  --muted: 120 118 111; /* warm neutral gray */
+  --ring: 18 18 16;
 
   /* Motion tokens — strong custom curves, not the built-in CSS easings */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -22,17 +14,10 @@
 }
 
 .dark {
-  --bg: 14 15 12; /* warm near-black */
-  --fg: 245 238 229;
-  --muted: 168 155 141;
-  --accent-a: #ffd60a;
-  --accent-b: #ffd60a;
-  --accent-glow: 255 214 10;
-
-  --accent-amber: #ffd60a;
-  --accent-copper: #ff9b42;
-  --accent-rose: #ff6fb0;
-  --accent-gradient: linear-gradient(100deg, var(--accent-amber) 0%, var(--accent-copper) 55%, var(--accent-rose) 100%);
+  --bg: 13 13 12; /* soft near-black */
+  --fg: 245 245 242; /* off-white */
+  --muted: 156 154 148;
+  --ring: 245 245 242;
 }
 
 * {
@@ -53,31 +38,28 @@ body {
 }
 
 ::selection {
-  background: #ffd60a;
-  color: #000;
+  background: rgb(var(--fg));
+  color: rgb(var(--bg));
 }
 
-/* Fine noise for texture */
+/* Fine noise for texture — the only "atmosphere" the background keeps */
 .noise::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .dark .noise::before {
-  opacity: 0.05;
+  opacity: 0.04;
 }
 
 /* ── Utility ────────────────────────────────────────────── */
+/* De-emphasised text (e.g. the ".dev" suffix) — quiet, not colored. */
 .text-gradient {
-  background-image: var(--accent-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  color: rgb(var(--muted));
 }
 
 .cell-label {
@@ -85,178 +67,6 @@ body {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ffd60a;
-}
-
-/* ── Glass surface primitives ──────────────────────────────
-   Soft translucent surface language: primitive-level tokens that
-   Phase 2 components (cards, modal, navbar, inputs) adopt directly,
-   built entirely from the existing glass-light/glass-dark/accent-glow
-   shadow tokens and the 2.5xl/3.5xl radii already in tailwind.config.ts. */
-.glass-panel {
-  @apply rounded-2xl border border-black/[0.07] bg-white/70 shadow-glass-light backdrop-blur-xl backdrop-saturate-150;
-  transition:
-    box-shadow 300ms var(--ease-out),
-    background-color 300ms var(--ease-out),
-    border-color 300ms var(--ease-out);
-}
-.dark .glass-panel {
-  @apply border-white/[0.08] bg-[#171310]/55 shadow-glass-dark;
-}
-.glass-panel-interactive:hover {
-  @apply shadow-glass-light-hover;
-}
-.dark .glass-panel-interactive:hover {
-  @apply shadow-glass-dark-hover;
-}
-.glow-accent {
-  @apply shadow-accent-glow;
-  transition: box-shadow 300ms var(--ease-out);
-}
-.glow-accent:hover {
-  @apply shadow-accent-glow-hover;
-}
-
-@supports not (backdrop-filter: blur(1px)) {
-  .glass-panel {
-    background-color: rgb(var(--bg) / 0.94);
-  }
-}
-
-@media (prefers-reduced-transparency: reduce) {
-  .glass-panel {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background-color: rgb(var(--bg) / 0.96);
-  }
-}
-
-/* ── Aurora field ───────────────────────────────────────────
-   Four radial blobs on a fixed layer, animated with transform-only
-   @keyframes (compositor thread, no layout/paint per frame). The
-   mask fades opacity hard after the hero so it stays a faint, calm
-   backdrop under the card grid instead of competing with it. */
-.aurora-field {
-  overflow: hidden;
-  contain: layout style paint;
-  mask-image: linear-gradient(
-    to bottom,
-    black 0,
-    black 68vh,
-    rgba(0, 0, 0, 0.16) 105vh,
-    rgba(0, 0, 0, 0.16) 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 0,
-    black 68vh,
-    rgba(0, 0, 0, 0.16) 105vh,
-    rgba(0, 0, 0, 0.16) 100%
-  );
-}
-
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(min(20vw, 170px));
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-}
-
-.aurora-blob-a {
-  left: -12%;
-  top: -18%;
-  width: 60vw;
-  height: 60vw;
-  max-width: 780px;
-  max-height: 780px;
-  background: radial-gradient(circle at 35% 35%, rgba(255, 214, 10, 0.55), transparent 70%);
-  animation: aurora-drift-a 58s var(--ease-in-out) infinite alternate;
-}
-
-.aurora-blob-b {
-  right: -16%;
-  top: 2%;
-  width: 55vw;
-  height: 55vw;
-  max-width: 700px;
-  max-height: 700px;
-  background: radial-gradient(circle at 60% 40%, rgba(255, 155, 66, 0.5), transparent 70%);
-  animation: aurora-drift-b 64s var(--ease-in-out) infinite alternate;
-}
-
-.aurora-blob-c {
-  left: 12%;
-  bottom: -22%;
-  width: 50vw;
-  height: 50vw;
-  max-width: 640px;
-  max-height: 640px;
-  background: radial-gradient(circle at 45% 55%, rgba(255, 111, 176, 0.42), transparent 70%);
-  animation: aurora-drift-c 70s var(--ease-in-out) infinite alternate;
-}
-
-.aurora-blob-d {
-  right: 2%;
-  bottom: -14%;
-  width: 42vw;
-  height: 42vw;
-  max-width: 560px;
-  max-height: 560px;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 214, 10, 0.3), transparent 70%);
-  animation: aurora-drift-d 46s var(--ease-in-out) infinite alternate;
-}
-
-.dark .aurora-blob-a {
-  background: radial-gradient(circle at 35% 35%, rgba(255, 214, 10, 0.32), transparent 70%);
-}
-.dark .aurora-blob-b {
-  background: radial-gradient(circle at 60% 40%, rgba(255, 155, 66, 0.28), transparent 70%);
-}
-.dark .aurora-blob-c {
-  background: radial-gradient(circle at 45% 55%, rgba(255, 111, 176, 0.24), transparent 70%);
-}
-.dark .aurora-blob-d {
-  background: radial-gradient(circle at 50% 50%, rgba(255, 214, 10, 0.18), transparent 70%);
-}
-
-@keyframes aurora-drift-a {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(6vw, 8vh, 0) scale(1.12);
-  }
-}
-@keyframes aurora-drift-b {
-  from {
-    transform: translate3d(0, 0, 0) scale(1.05);
-  }
-  to {
-    transform: translate3d(-7vw, 6vh, 0) scale(0.95);
-  }
-}
-@keyframes aurora-drift-c {
-  from {
-    transform: translate3d(0, 0, 0) scale(0.98);
-  }
-  to {
-    transform: translate3d(5vw, -6vh, 0) scale(1.1);
-  }
-}
-@keyframes aurora-drift-d {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(-4vw, -5vh, 0) scale(1.08);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .aurora-blob {
-    animation: none;
-  }
 }
 
 .no-scrollbar {
@@ -268,9 +78,8 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-a);
+  outline: 2px solid rgb(var(--ring));
   outline-offset: 2px;
-  border-radius: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -304,6 +113,82 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
+    animation: none;
+  }
+}
+
+/* ── Orbit field (hero) ─────────────────────────────────────
+   Two layers, both pure CSS animation (compositor thread, transform-only):
+
+   .orbit-card (outer, per card) traces the actual orbit — a single
+   `rotate() translateX() rotate()` pair sweeps the card around the field
+   center and cancels that sweep for orientation in the same keyframe, so
+   the card revolves in a ring without itself spinning. `scaleY` before/after
+   turns the circle into an ellipse sized to clear the text stack. Each
+   card's start angle comes in as a negative `animation-delay` (a phase
+   offset), so the ring isn't a rigid disk — every card is at a different
+   point in the loop.
+
+   .orbit-card-inner (inner) layers a small independent sway + tilt on top,
+   staggered per card, so the ring doesn't read as mechanically rigid.
+
+   All sizing (radius/squash/duration/delay/drift) comes in as inline custom
+   properties from orbit-field.tsx. The base `transform` on each is what
+   reduced-motion / paused states fall back to: scattered around the ring,
+   tilted, just not moving. */
+.orbit-card {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: scaleY(var(--orbit-s, 1)) rotate(var(--orbit-angle0, 0deg)) translateX(var(--orbit-r, 0px))
+    rotate(calc(var(--orbit-angle0, 0deg) * -1)) scaleY(calc(1 / var(--orbit-s, 1)));
+  animation-name: orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: scaleY(var(--orbit-s, 1)) rotate(0deg) translateX(var(--orbit-r, 0px)) rotate(0deg)
+      scaleY(calc(1 / var(--orbit-s, 1)));
+  }
+  to {
+    transform: scaleY(var(--orbit-s, 1)) rotate(360deg) translateX(var(--orbit-r, 0px)) rotate(-360deg)
+      scaleY(calc(1 / var(--orbit-s, 1)));
+  }
+}
+
+.orbit-card-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) rotate(var(--orbit-rot-a, 0deg));
+  animation-name: orbit-sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
+}
+
+@keyframes orbit-sway {
+  from {
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(var(--orbit-rot-a, 0deg));
+  }
+  to {
+    transform: translate(-50%, -50%) translate3d(var(--orbit-dx, 8px), var(--orbit-dy, -8px), 0)
+      rotate(var(--orbit-rot-b, 4deg));
+  }
+}
+
+.orbit-field[data-paused] .orbit-card,
+.orbit-field[data-paused] .orbit-card-inner {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-card,
+  .orbit-card-inner {
     animation: none;
   }
 }

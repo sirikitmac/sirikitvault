@@ -50,9 +50,9 @@ function Chip({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "inline-flex min-h-11 shrink-0 items-center justify-center rounded-none border px-3.5 py-1.5 text-[12.5px] font-medium transition-colors sm:min-h-0",
+        "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border px-3.5 py-1.5 text-[12.5px] font-medium transition-colors sm:min-h-0",
         active
-          ? "border-black bg-[#FFD60A] text-black font-semibold"
+          ? "border-black bg-black text-white font-semibold dark:border-white dark:bg-white dark:text-black"
           : "border-black/15 text-black/60 hover:border-black/40 hover:text-black dark:border-white/15 dark:text-white/60 dark:hover:border-white/40 dark:hover:text-white"
       )}
     >

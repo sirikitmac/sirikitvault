@@ -2,11 +2,14 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
+// All variants render the same flat invert now — the prop stays so callers
+// can keep semantic naming, but Cosmos has one accent: black, or white on
+// dark. No hue family per section.
 const ACCENT_CLASSES = {
-  yellow: "bg-[#FFD60A]",
-  green: "bg-[#4ADE80]",
-  pink: "bg-[#FF6FB0]",
-  orange: "bg-[#FF9B42]",
+  yellow: "bg-black text-[#FAFAF8] dark:bg-white dark:text-black",
+  green: "bg-black text-[#FAFAF8] dark:bg-white dark:text-black",
+  pink: "bg-black text-[#FAFAF8] dark:bg-white dark:text-black",
+  orange: "bg-black text-[#FAFAF8] dark:bg-white dark:text-black",
 } as const;
 
 type Accent = keyof typeof ACCENT_CLASSES;
@@ -41,11 +44,11 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: reduceMotion ? 0 : 0.35, ease: EASE_OUT }}
-          className="cell-label"
+          className="cell-label text-black/45 dark:text-white/45"
         >
           {eyebrow}
         </motion.p>
-        <h2 className="mt-1 flex flex-wrap items-baseline gap-x-[0.3em] gap-y-1 font-display text-2xl font-bold tracking-tight sm:text-[1.65rem]">
+        <h2 className="mt-1 flex flex-wrap items-baseline gap-x-[0.3em] gap-y-1 font-display text-2xl font-semibold tracking-tight sm:text-[1.65rem]">
           {words.map((word, i) => {
             const isHighlight =
               !!highlightWord && word.toLowerCase() === highlightWord.toLowerCase();
@@ -64,7 +67,7 @@ export function SectionHeading({
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: reduceMotion ? 0 : 0.4, delay, ease: EASE_OUT }}
-                  className={`inline-block px-1.5 text-black ${ACCENT_CLASSES[accent]}`}
+                  className={`inline-block rounded-md px-1.5 ${ACCENT_CLASSES[accent]}`}
                 >
                   {word}
                 </motion.span>
@@ -90,7 +93,7 @@ export function SectionHeading({
         </h2>
       </div>
       {typeof count === "number" && (
-        <span className="border border-[#E4E4DC] px-3 py-1 font-mono text-xs tabular-nums text-black/50 dark:border-[#2A2B22] dark:text-white/50">
+        <span className="rounded-lg border border-black/[0.08] px-3 py-1 font-mono text-xs tabular-nums text-black/50 dark:border-white/[0.08] dark:text-white/50">
           {count}
         </span>
       )}

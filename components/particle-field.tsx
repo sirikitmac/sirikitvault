@@ -4,11 +4,10 @@ import { useEffect, useRef } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import { useTheme } from "next-themes";
 
-const FG_LIGHT = "42, 34, 27";
-const FG_DARK = "245, 238, 229";
-const ACCENT = "255, 214, 10";
+const FG_LIGHT = "18, 18, 16";
+const FG_DARK = "245, 245, 242";
 // Faint hero-only trace — this used to be a full-page layer at 0.4.
-const LAYER_OPACITY = 0.22;
+const LAYER_OPACITY = 0.16;
 const ASSEMBLY_CYCLES = 4;
 const MAX_DPR = 2;
 const LINE_MAX_DIST = 85;
@@ -123,7 +122,7 @@ export function ParticleField() {
       for (const p of particlesRef.current) {
         ctx.beginPath();
         ctx.arc(p.homeX, p.homeY, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.accent ? ACCENT : fg}, ${p.alpha})`;
+        ctx.fillStyle = `rgba(${fg}, ${p.alpha})`;
         ctx.fill();
       }
     };
@@ -162,7 +161,7 @@ export function ParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.accent ? ACCENT : fg}, ${p.alpha})`;
+        ctx.fillStyle = `rgba(${fg}, ${p.alpha})`;
         ctx.fill();
       }
 
@@ -279,7 +278,7 @@ export function ParticleField() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0"
+      className="pointer-events-none absolute inset-0 h-full w-full"
       style={{ opacity: LAYER_OPACITY }}
     />
   );

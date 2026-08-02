@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { League_Spartan, Montserrat } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { Providers } from "@/components/providers";
-import { Aurora } from "@/components/aurora";
 import "./globals.css";
 
 const display = League_Spartan({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700"],
 });
 
 const body = Montserrat({
@@ -31,10 +30,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} ${GeistMono.variable} font-sans noise`}
       >
-        <Providers>
-          <Aurora />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

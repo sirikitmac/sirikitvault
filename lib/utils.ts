@@ -14,19 +14,21 @@ export function hashString(str: string): number {
   return Math.abs(h);
 }
 
-const GRADIENTS = [
-  "from-[#FFD60A] via-[#E6B800] to-[#141510]",
-  "from-[#141510] via-[#2A2B22] to-[#FFD60A]",
-  "from-[#E6B800] via-[#3F3A1F] to-[#FFD60A]",
-  "from-zinc-800 via-zinc-700 to-[#FFD60A]",
-  "from-[#FFD60A] via-[#7A5D00] to-[#141510]",
-  "from-zinc-900 via-[#544000] to-[#E6B800]",
-  "from-[#2A2B22] via-[#A47D00] to-[#FFD60A]",
-  "from-[#FFD60A] via-zinc-800 to-zinc-900",
+// Flat, deterministic neutral tiles per resource — no color, just a faint
+// per-item tonal shift so the preview grid still reads with variety.
+const SURFACES = [
+  "bg-[#F4F3EF] dark:bg-white/[0.045]",
+  "bg-[#EFEEE8] dark:bg-white/[0.06]",
+  "bg-[#F7F6F2] dark:bg-white/[0.03]",
+  "bg-black/[0.035] dark:bg-white/[0.05]",
+  "bg-[#F1F0EA] dark:bg-white/[0.04]",
+  "bg-black/[0.045] dark:bg-white/[0.055]",
+  "bg-[#F5F4EF] dark:bg-white/[0.035]",
+  "bg-black/[0.03] dark:bg-white/[0.065]",
 ];
 
-export function gradientFor(name: string): string {
-  return GRADIENTS[hashString(name) % GRADIENTS.length];
+export function surfaceFor(name: string): string {
+  return SURFACES[hashString(name) % SURFACES.length];
 }
 
 export function domainOf(url: string): string {

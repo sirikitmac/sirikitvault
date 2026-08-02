@@ -20,7 +20,7 @@ export function ThemeToggle() {
         mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"
       }
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-none border border-black bg-transparent text-black transition-transform hover:scale-105 active:scale-95 sm:h-9 sm:w-9"
+      className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-black/15 bg-transparent text-black transition-transform hover:scale-105 hover:border-black/30 active:scale-95 dark:border-white/15 dark:text-white dark:hover:border-white/30 sm:h-9 sm:w-9"
     >
       <AnimatePresence mode="wait" initial={false}>
         {mounted ? (

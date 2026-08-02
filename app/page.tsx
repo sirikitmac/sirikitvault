@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { CategoryMarquee } from "@/components/category-marquee";
 import { FilterChips } from "@/components/filter-chips";
 import { ResourceCard } from "@/components/resource-card";
 import { ResourceModal } from "@/components/resource-modal";
@@ -72,21 +73,27 @@ export default function Home() {
             setQuery("");
             toggleChip(tag);
           }}
-          onPickCategory={(category) => {
-            setQuery("");
-            toggleChip(category);
-          }}
           resourceCount={resources.length}
           categoryCount={allCategories.length}
         />
 
-        {/* Filters */}
-        <div className="mx-auto mt-12 w-[min(100%-1.5rem,72rem)]">
-          <FilterChips
-            selected={chips}
-            onToggle={toggleChip}
-            onClear={() => setChips([])}
-          />
+        {/* Categories + filters */}
+        <div id="browse" className="mx-auto mt-12 w-[min(100%-1.5rem,72rem)] scroll-mt-24">
+          <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-6">
+            <div id="categories" className="scroll-mt-24">
+              <CategoryMarquee
+                onPickCategory={(category) => {
+                  setQuery("");
+                  toggleChip(category);
+                }}
+              />
+            </div>
+            <FilterChips
+              selected={chips}
+              onToggle={toggleChip}
+              onClear={() => setChips([])}
+            />
+          </div>
         </div>
 
         <AnimatePresence mode="popLayout">

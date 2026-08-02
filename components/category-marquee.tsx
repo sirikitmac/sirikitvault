@@ -22,7 +22,7 @@ export function CategoryMarquee({
   onPickCategory: (category: string) => void;
 }) {
   return (
-    <div className="flex aspect-auto flex-col divide-y divide-[#E4E4DC] border border-[#E4E4DC] bg-white dark:divide-[#2A2B22] dark:border-[#2A2B22] dark:bg-[#141510] lg:aspect-square">
+    <div className="flex flex-col divide-y divide-black/[0.08] overflow-hidden rounded-2xl border border-black/[0.08] bg-white shadow-soft dark:divide-white/[0.08] dark:border-white/[0.08] dark:bg-[#141412] dark:shadow-soft-dark">
       {ROWS.map((row) => (
         <MarqueeRow key={row.category} {...row} onPick={onPickCategory} />
       ))}
@@ -65,8 +65,10 @@ function MarqueeRow({
 
   return (
     <div
-      className={`group relative flex min-h-[52px] flex-1 items-stretch overflow-hidden transition-colors duration-[120ms] ease-[var(--ease-out)] lg:min-h-0 ${
-        active ? "bg-[#FFD60A] text-black" : "bg-transparent text-inherit"
+      className={`group relative flex min-h-[46px] items-stretch overflow-hidden transition-colors duration-[120ms] ease-[var(--ease-out)] ${
+        active
+          ? "bg-black text-white dark:bg-white dark:text-black"
+          : "bg-transparent text-inherit"
       }`}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
@@ -94,19 +96,19 @@ function MarqueeRow({
               {names.length > 0 ? (
                 <div className="w-full overflow-hidden">
                   <div className="marquee-track">
-                    <span className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                    <span className="marquee-chunk font-display text-[clamp(0.9rem,3.2vw,1.2rem)] font-semibold uppercase tracking-tight lg:text-[clamp(1.05rem,1.6vw,1.35rem)]">
                       {sequence}
                     </span>
                     <span
                       aria-hidden="true"
-                      className="marquee-chunk font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+                      className="marquee-chunk font-display text-[clamp(0.9rem,3.2vw,1.2rem)] font-semibold uppercase tracking-tight lg:text-[clamp(1.05rem,1.6vw,1.35rem)]"
                     >
                       {sequence}
                     </span>
                   </div>
                 </div>
               ) : (
-                <span className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]">
+                <span className="font-display text-[clamp(0.9rem,3.2vw,1.2rem)] font-semibold uppercase tracking-tight lg:text-[clamp(1.05rem,1.6vw,1.35rem)]">
                   {label}
                 </span>
               )}
@@ -118,7 +120,7 @@ function MarqueeRow({
               animate={{ rotateX: 0, opacity: 1 }}
               exit={{ rotateX: -90, opacity: 0 }}
               transition={{ duration: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="font-display text-[clamp(1.05rem,4vw,1.6rem)] font-bold uppercase tracking-tight lg:text-[clamp(1.4rem,2.5vw,2rem)]"
+              className="font-display text-[clamp(0.9rem,3.2vw,1.2rem)] font-semibold uppercase tracking-tight lg:text-[clamp(1.05rem,1.6vw,1.35rem)]"
             >
               {label}
             </motion.span>
@@ -134,7 +136,7 @@ function MarqueeRow({
           onPick(category);
         }}
         aria-label={`Apply ${label} filter`}
-        className="flex min-h-11 w-11 shrink-0 items-center justify-center border-l border-black/10 dark:border-white/10 lg:hidden"
+        className="flex min-h-11 w-11 shrink-0 items-center justify-center border-l border-black/[0.08] dark:border-white/[0.08] lg:hidden"
       >
         <ArrowRight className="h-4 w-4" />
       </button>

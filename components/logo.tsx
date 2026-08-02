@@ -13,11 +13,11 @@ export function Logo({
       aria-hidden="true"
       style={{ width: size, height: size }}
       className={cn(
-        "inline-flex shrink-0 select-none items-center justify-center rounded-none bg-black text-[#FFD60A]",
+        "inline-flex shrink-0 select-none items-center justify-center rounded-full bg-black text-white dark:bg-white dark:text-black",
         className
       )}
     >
-      <Vault style={{ width: size * 0.58, height: size * 0.58 }} />
+      <Vault style={{ width: size * 0.55, height: size * 0.55 }} />
     </span>
   );
 }
