@@ -8,8 +8,10 @@ import { cn, faviconFor, hashString, screenshotFor, surfaceFor } from "@/lib/uti
 
 // Cosmos-style preview cards, orbiting the hero title in a slow ring.
 // Capped well below the full catalog (185) for performance — see counts below.
-const DESKTOP_COUNT = 22;
-const MOBILE_COUNT = 10;
+// Kept lower than the pre-video hero used (22/10): over a busy video
+// background, fewer cards read as intentional atmosphere instead of clutter.
+const DESKTOP_COUNT = 16;
+const MOBILE_COUNT = 6;
 
 type Depth = "near" | "mid" | "far";
 
@@ -245,9 +247,15 @@ function OrbitCardView({ card }: { card: OrbitCard }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.1, delay: 0.4 + Math.abs(card.orbitDelay) / 60 }}
         className={cn(
-          "orbit-card-inner absolute overflow-hidden rounded-xl border border-black/[0.08] bg-white shadow-soft dark:border-white/[0.1] dark:bg-[#141412] dark:shadow-soft-dark",
-          depth === "far" && "opacity-[0.55] blur-[1px] saturate-[0.75]",
-          depth === "mid" && "opacity-[0.85]"
+          // Always dark-video-tuned (not theme-dependent, unlike the rest of
+          // the site): a translucent glass tile plus a dark ambient shadow so
+          // cards separate from the footage instead of floating as flat, fully
+          // opaque plates. Opacity is dialed down per depth so the ring reads
+          // as subtle atmosphere behind the title, never competing with it.
+          "orbit-card-inner absolute overflow-hidden rounded-xl border border-white/[0.14] bg-white/[0.06] shadow-soft-dark backdrop-blur-[1px]",
+          depth === "near" && "opacity-[0.82]",
+          depth === "mid" && "opacity-[0.6]",
+          depth === "far" && "opacity-[0.38] blur-[1px] saturate-[0.7]"
         )}
         style={
           {

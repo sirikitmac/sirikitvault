@@ -192,3 +192,85 @@ body {
     animation: none;
   }
 }
+
+/* ── Liquid glass (web approximation, not Apple's native material) ──
+   Frosted panel: layered gradient fill + backdrop blur, an inset highlight
+   for a bright top edge, and a hairline border via ::after so the edge
+   reads as glass rather than a flat translucent box. Used over the
+   cinematic hero's video, so it's tuned dark by default. */
+.liquid-glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
+    rgba(10, 16, 24, 0.35);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 14px 40px -14px rgba(0, 0, 0, 0.5);
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.32), transparent 40%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.12), transparent 45%);
+  pointer-events: none;
+}
+
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .liquid-glass {
+    background: rgba(8, 13, 20, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* ── Fade-rise entrance (cinematic hero) ─────────────────────────── */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-rise {
+  animation: fade-rise 0.8s var(--ease-out) both;
+}
+
+.animate-fade-rise-delay {
+  animation: fade-rise 0.8s var(--ease-out) both;
+  animation-delay: 0.15s;
+}
+
+.animate-fade-rise-delay-2 {
+  animation: fade-rise 0.8s var(--ease-out) both;
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-rise,
+  .animate-fade-rise-delay,
+  .animate-fade-rise-delay-2 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

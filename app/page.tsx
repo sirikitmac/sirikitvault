@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
+import { Hero } from "@/components/hero-cinematic";
 import { CategoryMarquee } from "@/components/category-marquee";
 import { FilterChips } from "@/components/filter-chips";
 import { ResourceCard } from "@/components/resource-card";
