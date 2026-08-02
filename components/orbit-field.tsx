@@ -9,7 +9,7 @@ import { cn, faviconFor, hashString, screenshotFor, surfaceFor } from "@/lib/uti
 // Cosmos-style preview cards, orbiting the hero title in a slow ring.
 // Capped well below the full catalog (185) for performance — see counts below.
 const DESKTOP_COUNT = 22;
-const MOBILE_COUNT = 7;
+const MOBILE_COUNT = 10;
 
 type Depth = "near" | "mid" | "far";
 
@@ -59,12 +59,12 @@ function layoutFor(resource: Resource, boxW: number, boxH: number): OrbitCard {
   const depthRoll = (h >> 5) % 3;
   const depth: Depth = depthRoll === 0 ? "near" : depthRoll === 1 ? "mid" : "far";
 
-  // Below ~1100px the column leaves no headroom for a ring that clears the
-  // stack at every angle (the box is barely wider than the text itself) —
-  // fall back to a tiny wobble pinned in whichever screen corner still has
-  // slack beyond the stack's own footprint, instead of forcing a big loop
-  // through a space that isn't there. Corner pockets are small, so cards
-  // there are sized down to match (see width below).
+  // Desktop has enough spare width beyond the text column to route a wide
+  // ring fully around it. Below that, there isn't room for a ring that
+  // clears the stack at every angle, so mobile uses a smaller ring instead
+  // (see the radius/squash math below) — it passes near/behind the text,
+  // which the scrim above (hero.tsx) fades for legibility, the same way it
+  // already softens near-depth desktop cards.
   const ringMode = boxW >= 1100;
 
   const width = ringMode
@@ -74,10 +74,10 @@ function layoutFor(resource: Resource, boxW: number, boxH: number): OrbitCard {
         ? 54 + (h % 16)
         : 40 + (h % 12)
     : depth === "near"
-      ? 22 + (h % 8)
+      ? 34 + (h % 14)
       : depth === "mid"
-        ? 17 + (h % 6)
-        : 13 + (h % 5);
+        ? 26 + (h % 10)
+        : 20 + (h % 8);
   const height = Math.round(width * 0.72);
 
   // The hero text stack (eyebrow -> title -> tagline -> search -> stats ->
@@ -112,21 +112,25 @@ function layoutFor(resource: Resource, boxW: number, boxH: number): OrbitCard {
     squash = radius > 0 ? verticalRadius / radius : 1;
     orbitDuration = 46 + (h % 24); // 46s..70s — one slow loop around
   } else {
-    const leftSide = h % 2 === 0;
-    const topSide = (h >> 1) % 2 === 0;
-    // Anchor close to the true edge (small constant margin, not scaled by
-    // card size) — any part of the card past the edge is safely clipped by
-    // the field's own overflow-hidden, it just never needs to render toward
-    // the stack in the first place.
-    const marginX = width / 2 + 4;
-    const marginY = height / 2 + 4;
-    const anchorXPx = leftSide ? marginX : boxW - marginX;
-    const anchorYPx = topSide ? marginY : boxH - marginY;
-    anchorLeft = (anchorXPx / boxW) * 100;
-    anchorTop = (anchorYPx / boxH) * 100;
-    radius = 4 + (h % 5); // tiny local wobble, well clear of the corner pocket's edges
-    squash = 0.85;
-    orbitDuration = 24 + (h % 14); // slower still relative to its own tiny size
+    // Mobile ring: centered on the title, same orbiting motion as desktop,
+    // just sized against the box's real pixel dimensions instead of the
+    // (much wider) desktop danger-zone math — that mismatch is what pushed
+    // cards off-screen before. Both axes are clamped against the largest
+    // card plus its sway drift so the ellipse's outer edge always lands
+    // inside the box: visible and orbiting, never clipped.
+    anchorLeft = 50;
+    anchorTop = 50;
+    const cardHalfWidthMax = 24; // largest near-depth mobile card: (34+13)/2
+    const cardHalfHeightMax = 17; // ~ (34+13)*0.72 / 2
+    const driftMax = 15; // conservative upper bound for either axis' sway drift
+    const margin = 6;
+    radius = Math.max(36, halfW - cardHalfWidthMax - driftMax - margin);
+    const verticalRadius = Math.max(
+      28,
+      Math.min(radius * 1.2, halfH - cardHalfHeightMax - driftMax - margin)
+    );
+    squash = radius > 0 ? verticalRadius / radius : 1;
+    orbitDuration = 40 + (h % 20); // 40s..59s — slow loop, scaled for the smaller ring
   }
 
   const angle = h % 360;

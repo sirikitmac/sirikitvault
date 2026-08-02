@@ -14,6 +14,8 @@ import { Footer } from "@/components/footer";
 import { resources, allCategories } from "@/data/resources";
 import { filterResources } from "@/lib/filter";
 import { useFavorites } from "@/hooks/use-favorites";
+import { useViewMode, type ViewMode } from "@/hooks/use-view-mode";
+import { ViewSwitcher } from "@/components/view-switcher";
 import type { Resource } from "@/types/resource";
 
 export default function Home() {
@@ -22,6 +24,7 @@ export default function Home() {
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [selected, setSelected] = useState<Resource | null>(null);
   const { favorites, toggle } = useFavorites();
+  const { mode: viewMode, setMode: setViewMode } = useViewMode();
 
   const filtered = useMemo(
     () => filterResources(resources, { query, chips, favoritesOnly }, favorites),
@@ -115,12 +118,13 @@ export default function Home() {
               {filtered.length === 0 ? (
                 <EmptyState onReset={resetAll} />
               ) : (
-                <Grid>
+                <Grid variant={viewMode}>
                   {filtered.map((r, i) => (
                     <ResourceCard
                       key={r.id}
                       resource={r}
                       index={i}
+                      variant={viewMode}
                       isFavorite={favorites.has(r.id)}
                       onToggleFavorite={toggle}
                       onOpen={() => setSelected(r)}
@@ -145,13 +149,14 @@ export default function Home() {
                   count={featured.length}
                   highlightWord="Featured"
                 />
-                <Grid>
+                <Grid variant={viewMode}>
                   {featured.map((r, i) => (
                     <ResourceCard
                       key={r.id}
                       resource={r}
                       index={i}
                       featured
+                      variant={viewMode}
                       isFavorite={favorites.has(r.id)}
                       onToggleFavorite={toggle}
                       onOpen={() => setSelected(r)}
@@ -168,12 +173,13 @@ export default function Home() {
                   highlightWord="added"
                   accent="green"
                 />
-                <Grid>
+                <Grid variant={viewMode}>
                   {recent.map((r, i) => (
                     <ResourceCard
                       key={r.id}
                       resource={r}
                       index={i}
+                      variant={viewMode}
                       isFavorite={favorites.has(r.id)}
                       onToggleFavorite={toggle}
                       onOpen={() => setSelected(r)}
@@ -189,12 +195,16 @@ export default function Home() {
                   count={resources.length}
                   highlightWord="All"
                 />
-                <Grid>
+                <div className="mb-5 flex justify-end">
+                  <ViewSwitcher mode={viewMode} onChange={setViewMode} />
+                </div>
+                <Grid variant={viewMode}>
                   {sortedAllResources.map((r, i) => (
                     <ResourceCard
                       key={r.id}
                       resource={r}
                       index={i}
+                      variant={viewMode}
                       isFavorite={favorites.has(r.id)}
                       onToggleFavorite={toggle}
                       onOpen={() => setSelected(r)}
@@ -223,7 +233,31 @@ export default function Home() {
   );
 }
 
-function Grid({ children }: { children: React.ReactNode }) {
+function Grid({
+  children,
+  variant,
+}: {
+  children: React.ReactNode;
+  variant: ViewMode;
+}) {
+  if (variant === "gallery") {
+    return (
+      <div className="columns-2 gap-3 sm:columns-3 lg:columns-5 xl:columns-6 [&>*]:mb-3 [&>*]:break-inside-avoid">
+        {children}
+      </div>
+    );
+  }
+
+  if (variant === "list") {
+    return <div className="flex flex-col gap-2.5">{children}</div>;
+  }
+
+  if (variant === "single") {
+    return (
+      <div className="mx-auto flex max-w-2xl flex-col gap-6">{children}</div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {children}
