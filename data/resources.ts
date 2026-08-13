@@ -402,7 +402,7 @@ export const resources: Resource[] = [
     description:
       "Fonts from movies, games and logos — identify typefaces and generate styled text.",
     category: "Fonts",
-    tags: ["Typography", "Free", "Generator"],
+    tags: ["Typography", "Free", "Generators"],
     dateAdded: "2026-05-28",
     recommended: true,
   },
@@ -470,7 +470,7 @@ export const resources: Resource[] = [
     description:
       "A CSS animation playground — pick, tweak and export ready-made animation snippets.",
     category: "Animations",
-    tags: ["CSS", "Animation", "Generator", "Free"],
+    tags: ["CSS", "Animation", "Generators", "Free"],
     dateAdded: "2026-06-10",
     recommended: true,
   },
@@ -500,7 +500,7 @@ export const resources: Resource[] = [
     url: "https://www.ascii-magic.com/",
     description: "ASCII art generator — turn visuals into text art.",
     category: "Developer Tools",
-    tags: ["Generator", "ASCII", "Fun", "Free"],
+    tags: ["Generators", "ASCII", "Fun", "Free"],
     dateAdded: "2026-06-10",
     recommended: true,
   },
@@ -733,7 +733,7 @@ export const resources: Resource[] = [
     description:
       "Turns text into visuals — an AI tool that generates diagrams, charts and graphics from plain writing.",
     category: "AI Tools",
-    tags: ["AI", "Diagrams", "Generator", "Free"],
+    tags: ["AI", "Diagrams", "Generators", "Free"],
     dateAdded: "2026-08-01",
     recommended: true,
   },
@@ -1207,7 +1207,7 @@ export const resources: Resource[] = [
     description:
       "Generate font pairings powered by a neural network.",
     category: "Fonts",
-    tags: ["Typography", "Generator", "Free"],
+    tags: ["Typography", "Generators", "Free"],
     dateAdded: "2026-08-01",
   },
   {
@@ -1347,7 +1347,7 @@ export const resources: Resource[] = [
     description:
       "Generate a favicon from text, an image, or an emoji.",
     category: "Icons",
-    tags: ["Icons", "Generator", "Free"],
+    tags: ["Icons", "Generators", "Free"],
     dateAdded: "2026-08-01",
   },
   {
@@ -1357,7 +1357,7 @@ export const resources: Resource[] = [
     description:
       "Generate favicons for all platforms, browsers and devices.",
     category: "Icons",
-    tags: ["Icons", "Generator", "Free"],
+    tags: ["Icons", "Generators", "Free"],
     dateAdded: "2026-08-01",
   },
   {
@@ -1467,7 +1467,7 @@ export const resources: Resource[] = [
     description:
       "An easy-to-use online graphic design tool.",
     category: "Developer Tools",
-    tags: ["Generator", "Free"],
+    tags: ["Generators", "Free"],
     dateAdded: "2026-08-01",
   },
   {
@@ -1939,6 +1939,172 @@ export const resources: Resource[] = [
     category: "UI Inspiration",
     tags: ["Reference", "Community", "Free"],
     dateAdded: "2026-08-01",
+  },
+
+  // ─────────────────── Added 2026-08-13 batch ───────────────────
+  {
+    id: "skiper-ui",
+    name: "Skiper UI",
+    url: "https://skiper-ui.com/",
+    description:
+      "Uncommon, animated UI components built for shadcn/ui and Tailwind CSS.",
+    category: "UI Components",
+    tags: ["Components", "Tailwind", "shadcn/ui"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "vengeance-ui",
+    name: "Vengeance UI",
+    url: "https://www.vengenceui.com/",
+    description:
+      "Open-source React component library with animated hover effects, tooltips and scroll-driven layouts.",
+    category: "UI Components",
+    tags: ["Components", "React", "Open Source", "Free"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "threlte",
+    name: "Threlte",
+    url: "https://threlte.xyz/",
+    description:
+      "A declarative 3D framework for building web apps with Svelte and Three.js.",
+    category: "Developer Tools",
+    tags: ["Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "manus",
+    name: "Manus",
+    url: "https://manus.im/app",
+    description:
+      "An AI agent platform for design, web development, slides and content generation.",
+    category: "AI Tools",
+    tags: ["AI", "Design", "Developer"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "ui-prompts",
+    name: "UI Prompts",
+    url: "https://www.uiprompts.app/",
+    description:
+      "A library of AI prompts for generating cinematic UI website templates in AI coding tools.",
+    category: "AI Tools",
+    tags: ["AI", "Generators", "Web Design"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "get-layers",
+    name: "GetLayers",
+    url: "https://www.getlayers.ai/",
+    description:
+      "An AI-native library of design templates and prompts for generating ready-to-launch websites.",
+    category: "AI Tools",
+    tags: ["AI", "Generators", "Web Design"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "3dicons",
+    name: "3dicons",
+    url: "https://3dicons.co/",
+    description: "A free, open-source library of 1,500+ hand-crafted 3D icons.",
+    category: "Icons",
+    tags: ["Icons", "3D", "Open Source", "Free"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "notyourtype",
+    name: "Not Your Type",
+    url: "https://www.notyourtype.nl/",
+    description:
+      "An independent Rotterdam type foundry designing original commercial typefaces.",
+    category: "Fonts",
+    tags: ["Typography", "Branding", "Paid"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "pryzm",
+    name: "Pryzm",
+    url: "https://pryzm.design/",
+    description:
+      "A browser-based tool for creating animated backgrounds by blending gradients, effects and grain.",
+    category: "Backgrounds",
+    tags: ["Backgrounds", "Gradients", "Textures"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "coolors",
+    name: "Coolors",
+    url: "https://coolors.co/",
+    description:
+      "A fast color palette generator for exploring, building and exporting color schemes.",
+    category: "Design Assets",
+    tags: ["Assets", "Color", "Generators"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "happy-hues",
+    name: "Happy Hues",
+    url: "https://www.happyhues.co/",
+    description:
+      "A color palette inspiration site showing curated palettes applied to real design examples.",
+    category: "Design Assets",
+    tags: ["Assets", "Color", "Free"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "pattern-monster",
+    name: "Pattern Monster",
+    url: "https://pattern.monster/",
+    description:
+      "An SVG pattern generator for creating customizable vector background patterns.",
+    category: "Backgrounds",
+    tags: ["Backgrounds", "SVG", "Generators"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "magic-animator",
+    name: "Magic Animator",
+    url: "https://magicanimator.com/",
+    description:
+      "An AI animation generator that turns static designs into motion for Figma, Canva and Adobe Express.",
+    category: "Animations",
+    tags: ["Animation", "AI", "Motion"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "bklit",
+    name: "Bklit",
+    url: "https://bklit.com/",
+    description:
+      "An open-source library of design-engineered data visualization components.",
+    category: "UI Components",
+    tags: ["Components", "Developer", "Open Source", "Free"],
+    dateAdded: "2026-08-13",
+    recommended: true,
+  },
+  {
+    id: "nexflow",
+    name: "NexFlow",
+    url: "https://nexflowinc.com/",
+    description:
+      "An AI agency that deploys forward-deployed agents into client workflows and operations.",
+    category: "AI Tools",
+    tags: ["AI", "Developer"],
+    dateAdded: "2026-08-13",
+    recommended: true,
   },
 ];
 
